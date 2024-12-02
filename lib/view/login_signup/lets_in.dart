@@ -1,13 +1,15 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:movie1/Theme/dark_theme.dart';
-import 'package:movie1/login_signup/widgets/button.dart';
-import 'package:movie1/login_signup/widgets/dvider.dart';
-import 'package:movie1/login_signup/widgets/end_text.dart';
-import 'package:movie1/login_signup/widgets/lets_option.dart';
-import 'package:movie1/login_signup/log_in.dart';
-import 'package:movie1/login_signup/sign_up.dart';
+import 'package:movie1/view/login_signup/log_in.dart';
+import 'package:movie1/view/login_signup/sign_up.dart';
+import 'package:movie1/view/login_signup/widgets/button.dart';
+import 'package:movie1/view/login_signup/widgets/dvider.dart';
+import 'package:movie1/view/login_signup/widgets/end_text.dart';
+import 'package:movie1/view/login_signup/widgets/lets_option.dart';
 
 class LetsIn extends StatelessWidget {
   const LetsIn({super.key});

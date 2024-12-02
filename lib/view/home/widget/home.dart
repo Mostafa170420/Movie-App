@@ -4,8 +4,9 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:movie1/Theme/dark_theme.dart';
 import 'package:movie1/cubit/movie_cubit.dart';
 import 'package:movie1/data/movie.dart';
-import 'package:movie1/home/widget/CastomSlider.dart';
-import 'package:movie1/home/widget/movie_list.dart';
+import 'package:movie1/view/home/widget/CastomSlider.dart';
+import 'package:movie1/view/home/widget/movie_list.dart';
+
 
 class home extends StatelessWidget {
   home({super.key});

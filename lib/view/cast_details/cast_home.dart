@@ -2,11 +2,12 @@ import 'package:delayed_widget/delayed_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie1/Theme/dark_theme.dart';
-import 'package:movie1/cast_details/cast_AppBar.dart';
 import 'package:movie1/cubit/cast_cubit.dart';
 import 'package:movie1/cubit/cast_states.dart';
 import 'package:movie1/data/cast.dart';
-import 'package:movie1/details/subText.dart';
+import 'package:movie1/view/cast_details/cast_AppBar.dart';
+import 'package:movie1/view/cast_details/cast_movie_item.dart';
+import 'package:movie1/view/details/subText.dart';
 
 class CastHome extends StatelessWidget {
   CastHome({super.key, required this.cast});
@@ -14,6 +15,7 @@ class CastHome extends StatelessWidget {
   CastCubit castCubit = CastCubit();
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return BlocProvider(
         create: (context) => castCubit..getCastInformation(cast),
         child: Scaffold(
@@ -121,6 +123,22 @@ class CastHome extends StatelessWidget {
                               ),
                               const SizedBox(
                                 height: 10,
+                              ),
+                              SizedBox(
+                                height: size.height / 5,
+                                child: ListView.separated(
+                                    scrollDirection: Axis.horizontal,
+                                    itemBuilder: (context, index) =>
+                                        CastMovieItem(
+                                            movie: cast.movies[index]),
+                                    separatorBuilder: (context, index) =>
+                                        const SizedBox(
+                                          width: 10,
+                                        ),
+                                    itemCount: cast.movies.length),
+                              ),
+                              const SizedBox(
+                                height: 15,
                               ),
                               ExpandableText(
                                 text: cast.description,

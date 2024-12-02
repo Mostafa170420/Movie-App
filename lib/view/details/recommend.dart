@@ -1,10 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:movie1/Theme/dark_theme.dart';
 import 'package:movie1/data/movie.dart';
-import 'package:movie1/details/movieDetails.dart';
-import 'package:movie1/rating.dart';
+import 'package:movie1/components/rating.dart';
+import 'package:movie1/view/details/movieDetails.dart';
 import 'package:shimmer/shimmer.dart';
 
 class RecommendWidget extends StatelessWidget {

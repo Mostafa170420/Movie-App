@@ -10,13 +10,14 @@ class Image_Container extends StatelessWidget {
   final double rate;
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Stack(
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(8),
           child: CachedNetworkImage(
             imageUrl: imageUrl,
-            width: 130,
+            width: size.width * 0.35,
             fit: BoxFit.fill,
             placeholder: (context, url) => Shimmer.fromColors(
               baseColor: Colors.grey[300]!,

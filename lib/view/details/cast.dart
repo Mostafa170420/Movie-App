@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie1/Theme/dark_theme.dart';
-import 'package:movie1/cast_details/cast_home.dart';
 import 'package:movie1/data/cast.dart';
+import 'package:movie1/view/cast_details/cast_home.dart';
 
 class CastWidget extends StatelessWidget {
   CastWidget({super.key, required this.castItems});

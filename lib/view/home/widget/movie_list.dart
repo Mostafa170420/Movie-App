@@ -1,15 +1,14 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:movie1/Image_Container.dart';
+import 'package:movie1/components/Image_Container.dart';
 import 'package:movie1/Theme/colors.dart';
 import 'package:movie1/Theme/dark_theme.dart';
-import 'package:movie1/cubit/movie_cubit.dart';
+import 'package:movie1/cubit/myListCubit.dart';
 import 'package:movie1/data/movie.dart';
 import 'package:movie1/data/my_list.dart';
-import 'package:movie1/details/movieDetails.dart';
-import 'package:movie1/see_all.dart';
+import 'package:movie1/view/home/see_all.dart';
+import 'package:movie1/view/details/movieDetails.dart';
 import 'package:shimmer/shimmer.dart';
 
 class MovieList extends StatelessWidget {
@@ -68,7 +67,7 @@ class MovieList extends StatelessWidget {
         ),
         Container(
           padding: const EdgeInsets.symmetric(),
-          height: 200.0,
+          height: MediaQuery.of(context).size.width * 0.5,
           width: MediaQuery.of(context).size.width,
           child: ListView.separated(
               padding: const EdgeInsets.symmetric(horizontal: 10.0),
@@ -82,7 +81,8 @@ class MovieList extends StatelessWidget {
                               btnOkText: "Save",
                               body: saveWidget(category[index].imagePath),
                               btnOkOnPress: () {
-                                MyListMovies.addMovie(category[index]);
+                                MyListCubit.get(context)
+                                    .addMovie(movie: category[index]);
                               },
                               dialogBackgroundColor: Colors.transparent,
                               btnCancelOnPress: () {},

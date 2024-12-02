@@ -6,8 +6,8 @@ import 'package:movie1/Theme/dark_theme.dart';
 import 'package:movie1/cubit/bottomNavigationBar_cubit.dart';
 import 'package:movie1/cubit/movie_cubit.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:movie1/myList_screan.dart';
-import 'package:movie1/profile.dart';
+import 'package:movie1/view/home/myList_screan.dart';
+import 'package:movie1/view/home/profile.dart';
 import 'widget/home.dart';
 
 

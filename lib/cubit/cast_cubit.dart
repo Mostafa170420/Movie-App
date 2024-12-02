@@ -11,6 +11,7 @@ class CastCubit extends Cubit<CastStates> {
   void getData(MovieItem movieItem) async {
     try {
       emit(CastLoadingStates());
+      await movieItem.getYoutube();
       await movieItem.Recommend();
       await movieItem.getCast();
       _recommend.addAll(movieItem.recommend);
@@ -26,19 +27,10 @@ class CastCubit extends Cubit<CastStates> {
     try {
       emit(CastLoadingStates());
       await cast.castInformation();
+      await cast.castMovies();
       emit(CastInformationSuccessStates(cast: cast));
     } on DioException {
       emit(CastInformationFailedStates());
-    }
-  }
-
-  void getCastMovies(Cast cast) async {
-    try {
-      emit(CastLoadingStates());
-      await cast.castMovies();
-      emit(CastMoviesSuccessStates(movies: cast.movies));
-    } on DioException {
-      emit(CastFailedStates());
     }
   }
 }

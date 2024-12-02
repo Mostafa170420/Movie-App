@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:movie1/Theme/dark_theme.dart';
 import 'package:movie1/cubit/movie_cubit.dart';
-import 'package:movie1/grid.dart';
+import 'package:movie1/components/grid.dart';
 
 class SeeAll extends StatelessWidget {
   SeeAll({super.key, required this.category, required this.title});

@@ -2,8 +2,8 @@ import 'package:delayed_widget/delayed_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movie1/Theme/dark_theme.dart';
-import 'package:movie1/login_signup/widgets/button.dart';
-import 'package:movie1/login_signup/lets_in.dart';
+import 'package:movie1/view/login_signup/lets_in.dart';
+import 'package:movie1/view/login_signup/widgets/button.dart';
 
 class EntryScrean extends StatelessWidget {
   const EntryScrean({super.key});

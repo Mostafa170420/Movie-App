@@ -1,21 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ErrorMessage extends StatelessWidget {
-  ErrorMessage(
-      {super.key,
-      required this.message,
-      required this.title,
-      required this.color});
-  String message;
-  String title;
-  Color color;
-
-  @override
-  Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height;
-    var width = MediaQuery.of(context).size.width;
-    return Container(
+void ErrorMessage(
+    {required String message,
+    required String title,
+    required Color color,
+    required context}) {
+  var height = MediaQuery.of(context).size.height;
+  var width = MediaQuery.of(context).size.width;
+  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+    content: Container(
       width: width / 1.3,
       height: height / 14,
       decoration:
@@ -38,6 +32,9 @@ class ErrorMessage extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
+    ),
+    behavior: SnackBarBehavior.floating,
+    backgroundColor: Colors.transparent,
+    elevation: 0,
+  ));
 }

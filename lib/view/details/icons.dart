@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:movie1/Theme/dark_theme.dart';
-import 'package:movie1/buttom.dart';
-import 'package:movie1/details/subText.dart';
+import 'package:movie1/components/buttom.dart';
+import 'package:movie1/view/details/subText.dart';
 
 class SecondScrean extends StatelessWidget {
   SecondScrean(

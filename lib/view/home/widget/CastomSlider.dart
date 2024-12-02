@@ -3,8 +3,9 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:movie1/Theme/dark_theme.dart';
+import 'package:movie1/cubit/myListCubit.dart';
 import 'package:movie1/data/my_list.dart';
-import 'package:movie1/details/movieDetails.dart';
+import 'package:movie1/view/details/movieDetails.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'CustomRounded.dart';
@@ -14,12 +15,13 @@ class CastomSlider extends StatelessWidget {
   List topRated;
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Stack(
       children: [
         CarouselSlider.builder(
           options: CarouselOptions(
-            height: 300.0,
             autoPlay: true,
+            height: size.width * 0.8,
             viewportFraction: 1,
             autoPlayAnimationDuration: const Duration(seconds: 2),
           ),
@@ -31,7 +33,7 @@ class CastomSlider extends StatelessWidget {
                   imageUrl: topRated[index].backdrop_path,
                   fit: BoxFit.fill,
                   filterQuality: FilterQuality.high,
-                  height: 350.0,
+                  height: size.width,
                   width: MediaQuery.of(context).size.width,
                   placeholder: (context, url) => Shimmer.fromColors(
                     baseColor: Colors.grey[300]!,
@@ -88,7 +90,8 @@ class CastomSlider extends StatelessWidget {
                                       title: 'Success',
                                       autoHide: const Duration(seconds: 2))
                                   .show();
-                              MyListMovies.addMovie(topRated[index]);
+                              MyListCubit.get(context)
+                                  .addMovie(movie: topRated[index]);
                             },
                             child: const CustomIconButton(
                                 border: true,
